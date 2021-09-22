@@ -1,7 +1,11 @@
-/* eslint-disable prettier/prettier */
-import express from "express";
+import express from 'express';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { categoriesRoutes } from './routes/categories.routes';
+
 const app = express();
 
-app.listen(3333,()=> console.log("Server is Running!"));
+app.use(express.json());
+
+app.use(categoriesRoutes);
+
+app.listen(3333, () => console.log('Server is Running!'));
