@@ -13,6 +13,8 @@ class CategoriesRepository {
         this.categories = [];
     }
 
+    /*= =================================CREATE============================================ */
+    /*= ================================================================================== */
     create({ description, name }: ICreateCategoryDTO): void {
         // void para falar que nao tem retorno
 
@@ -32,6 +34,13 @@ class CategoriesRepository {
         this.categories.push(category);
         // push ele e um insert dentro do array
     }
+    /*= ================================================================================== */
+    /*= =================================GET-ALL============================================ */
+    getAll(): Category[] {
+        return this.categories;
+    }
+    /*= ================================================================================== */
+    /*= =================================GET-ALL============================================ */
 }
 
 export { CategoriesRepository };
