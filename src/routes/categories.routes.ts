@@ -1,20 +1,18 @@
 import { Router } from 'express';
 
-import { CategoriesRepository } from '../modules/cars/repository/CategoriesRepository';
-import { createCategoryController } from '../modules/cars/useCases/createCategory';
+import { createCategory } from '../modules/cars/useCases/createCategory';
+import { getAllCategory } from '../modules/cars/useCases/getAllCategory';
 
 const categoriesRoutes = Router();
 
-const categoriesRepository = new CategoriesRepository();
 /*= ================================================================================== */
 /*= ================================================================================== */
 categoriesRoutes.post('/', (request, response) => {
-    return createCategoryController.handle(request, response);
+    return createCategory.handle(request, response);
 });
 /*= ================================================================================== */
 categoriesRoutes.get('/', (request, response) => {
-    const all = categoriesRepository.getAll();
-    return response.json(all);
+    return getAllCategory.handle(request, response);
 });
 /*= ================================================================================== */
 

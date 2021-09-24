@@ -6,12 +6,11 @@
 ############################################################################## */
 
 import { CategoriesRepository } from '../../repository/CategoriesRepository';
-import { CreateCategoryController } from './CreateCategoryController';
-import { CreateCategoryUseCase } from './CreateCategoryUseCase';
+import { GetAllCategoryController } from './GetAllCategoryController';
+import { GetAllCategoryUseCase } from './GetAllCategoryUseCase';
 
 const categoriesRepository = new CategoriesRepository();
-const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository);
+const getAllCategoryUseCase = new GetAllCategoryUseCase(categoriesRepository);
+const getAllCategory = new GetAllCategoryController(getAllCategoryUseCase);
 
-const createCategory = new CreateCategoryController(createCategoryUseCase);
-
-export { createCategory };
+export { getAllCategory };
