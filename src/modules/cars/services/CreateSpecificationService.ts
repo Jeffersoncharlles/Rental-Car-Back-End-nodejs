@@ -22,11 +22,17 @@ interface IRequest {
     description: string;
 }
 class CreateSpecificationService {
-    // tem que ter o private para ter acesso
-    constructor(private categoriesRepository: ISpecificationsRepository) {}
+    constructor(private specificationsRepository: ISpecificationsRepository) {}
 
     execute({ name, description }: IRequest): void {
-        console.log('TODO');
+        const specificationAlreadyExists =
+            this.specificationsRepository.findByName(name);
+
+        if (specificationAlreadyExists) {
+            throw new Error('Specification already exists!');
+        }
+
+        this.specificationsRepository.create({ name, description });
     }
 }
 export { CreateSpecificationService };

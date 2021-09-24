@@ -5,15 +5,16 @@ interface contrato
 import { Specification } from '../model/Specification';
 
 // DTO -> DATA TRANSFER OBJECT
-interface ICreateCategoryDTO {
+interface ICreatSpecificationDTO {
     name: string;
     description: string;
 }
 
 interface ISpecificationsRepository {
-    // findByName(name: string): Specification;
+    //
     // getAll(): Specification[];
-    // create({ name, description }: ICreateCategoryDTO): void;
+    create({ name, description }: ICreatSpecificationDTO): void;
+    findByName(name: string): Specification;
 }
 
-export { ISpecificationsRepository, ICreateCategoryDTO };
+export { ISpecificationsRepository, ICreatSpecificationDTO };
