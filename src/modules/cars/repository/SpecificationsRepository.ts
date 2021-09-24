@@ -10,7 +10,8 @@ class SpecificationsRepository implements ISpecificationsRepository {
     constructor() {
         this.specifications = [];
     }
-
+    /*= ================================================================================== */
+    /*= =================================CREATE============================================ */
     create({ name, description }: ICreatSpecificationDTO): void {
         const specification = new Specification();
 
@@ -20,15 +21,22 @@ class SpecificationsRepository implements ISpecificationsRepository {
             created_at: new Date(),
         });
 
-        // throw new Error('Method not implemented.');
         this.specifications.push(specification);
     }
-
+    /*= ================================================================================== */
+    /*= ==============================FIND-BY-NAME============================================ */
     findByName(name: string): Specification {
         const specification = this.specifications.find((s) => s.name === name);
 
         return specification;
     }
+    /*= ================================================================================== */
+    /*= =================================GET-ALL============================================ */
+    getAll(): Specification[] {
+        return this.specifications;
+    }
+    /*= ================================================================================== */
+    /*= =================================GET-ALL============================================ */
 }
 
 export { SpecificationsRepository };

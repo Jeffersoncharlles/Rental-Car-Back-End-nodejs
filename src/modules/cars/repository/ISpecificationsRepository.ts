@@ -12,7 +12,7 @@ interface ICreatSpecificationDTO {
 
 interface ISpecificationsRepository {
     //
-    // getAll(): Specification[];
+    getAll(): Specification[];
     create({ name, description }: ICreatSpecificationDTO): void;
     findByName(name: string): Specification;
 }

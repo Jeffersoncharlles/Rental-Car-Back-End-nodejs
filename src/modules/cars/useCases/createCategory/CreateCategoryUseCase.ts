@@ -7,13 +7,13 @@
 #
 */
 
-import { ICategoriesRepository } from '../repository/ICategoriesRepository';
+import { ICategoriesRepository } from '../../repository/ICategoriesRepository';
 
 interface IRequest {
     name: string;
     description: string;
 }
-class CreateCategoryService {
+class CreateCategoryUseCase {
     // tem que ter o private para ter acesso
     constructor(private categoriesRepository: ICategoriesRepository) {}
 
@@ -29,4 +29,4 @@ class CreateCategoryService {
         this.categoriesRepository.create({ name, description });
     }
 }
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
