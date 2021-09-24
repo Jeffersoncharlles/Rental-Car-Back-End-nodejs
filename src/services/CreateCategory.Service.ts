@@ -3,10 +3,11 @@
 [x] - Alterar o retorno de erro
 [x] - Acessar o repositorio
 [] - Retornar Algo 
-# o service acessa o repository que acessa o model 
+# acessa a interface que acessa o repository
 #
 */
-import { CategoriesRepository } from '../repository/CategoriesRepository';
+
+import { ICategoriesRepository } from '../repository/ICategoriesRepository';
 
 interface IRequest {
     name: string;
@@ -14,7 +15,7 @@ interface IRequest {
 }
 class CreateCategoryService {
     // tem que ter o private para ter acesso
-    constructor(private categoriesRepository: CategoriesRepository) {}
+    constructor(private categoriesRepository: ICategoriesRepository) {}
 
     execute({ name, description }: IRequest): void {
         const categoryAlreadyExists =
