@@ -9,7 +9,8 @@ import { CategoriesRepository } from '../../repository/CategoriesRepository';
 import { GetAllCategoryController } from './GetAllCategoryController';
 import { GetAllCategoryUseCase } from './GetAllCategoryUseCase';
 
-const categoriesRepository = new CategoriesRepository();
+// nao vou criar mais a new aqui vou so chamar
+const categoriesRepository = CategoriesRepository.getInstance();
 const getAllCategoryUseCase = new GetAllCategoryUseCase(categoriesRepository);
 const getAllCategory = new GetAllCategoryController(getAllCategoryUseCase);
 

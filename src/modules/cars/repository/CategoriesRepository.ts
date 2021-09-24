@@ -4,11 +4,24 @@ import {
     ICreateCategoryDTO,
 } from './ICategoriesRepository';
 
+// Singleton Pattern
+
 class CategoriesRepository implements ICategoriesRepository {
     private categories: Category[];
 
-    constructor() {
+    private static INSTANCE: CategoriesRepository;
+
+    private constructor() {
         this.categories = [];
+    }
+
+    public static getInstance(): CategoriesRepository {
+        if (!CategoriesRepository.INSTANCE) {
+            // SE NAO TIVER NENHUM VALOR ATRIBUIDO A ELE
+            CategoriesRepository.INSTANCE = new CategoriesRepository();
+        }
+        return CategoriesRepository.INSTANCE;
+        // se ja tiver agente returna essa instancia
     }
 
     /*= =================================CREATE============================================ */
