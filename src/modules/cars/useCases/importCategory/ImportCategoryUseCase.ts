@@ -1,3 +1,11 @@
+/*
+# receber o arquivo
+# salvar tmp dele 
+# ler o tmp e jogar para uma variavel
+# percorrer linha por linha e salvar um array
+# percorrer esse array e salvar no db
+*/
+
 import csvParse from 'csv-parse';
 import fs from 'fs';
 
