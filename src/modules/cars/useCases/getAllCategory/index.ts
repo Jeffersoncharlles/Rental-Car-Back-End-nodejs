@@ -1,5 +1,5 @@
 /* ##############################################################################
-# File: createCategory                                                         #
+# File: getAllCategory                                                         #
 # Project: rentalbackendx                                                      #
 # Created Date: 2021-09-24 04:41:00                                            #
 # Author: Jefferson Charlles                                                   #
