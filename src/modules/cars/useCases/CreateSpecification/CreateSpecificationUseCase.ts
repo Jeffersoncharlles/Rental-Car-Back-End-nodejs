@@ -1,5 +1,5 @@
 /* ##############################################################################
-# File: CreateSpecificationService.ts                                          #
+# File: CreateSpecificationUseCase                                              #
 # Project: rentalbackendx                                                      #
 # Created Date: 2021-09-24 01:41:00                                            #
 # Author: Jefferson Charlles                                                   #
@@ -15,13 +15,13 @@
 # sempre conhecer a interface e nunca a implementacao
 */
 
-import { ISpecificationsRepository } from '../repository/ISpecificationsRepository';
+import { ISpecificationsRepository } from '../../repository/ISpecificationsRepository';
 
 interface IRequest {
     name: string;
     description: string;
 }
-class CreateSpecificationService {
+class CreateSpecificationUseCase {
     constructor(private specificationsRepository: ISpecificationsRepository) {}
 
     execute({ name, description }: IRequest): void {
@@ -35,4 +35,4 @@ class CreateSpecificationService {
         this.specificationsRepository.create({ name, description });
     }
 }
-export { CreateSpecificationService };
+export { CreateSpecificationUseCase };

@@ -5,7 +5,7 @@
 # Author: Jefferson Charlles                                                   #
 ############################################################################## */
 
-import { CategoriesRepository } from '../../repository/CategoriesRepository';
+import { CategoriesRepository } from '../../repository/implementations/CategoriesRepository';
 import { CreateCategoryController } from './CreateCategoryController';
 import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 
