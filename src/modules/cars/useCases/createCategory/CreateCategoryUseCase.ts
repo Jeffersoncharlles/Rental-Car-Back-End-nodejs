@@ -6,6 +6,7 @@
 # acessa a interface que acessa o repository
 #
 */
+import { inject, injectable } from 'tsyringe';
 
 import { ICategoriesRepository } from '../../repository/ICategoriesRepository';
 
@@ -13,9 +14,13 @@ interface IRequest {
     name: string;
     description: string;
 }
+@injectable()
 class CreateCategoryUseCase {
     // tem que ter o private para ter acesso
-    constructor(private categoriesRepository: ICategoriesRepository) {}
+    constructor(
+        @inject('CategoriesRepository')
+        private categoriesRepository: ICategoriesRepository
+    ) {}
 
     async execute({ name, description }: IRequest): Promise<void> {
         const categoryAlreadyExists =
