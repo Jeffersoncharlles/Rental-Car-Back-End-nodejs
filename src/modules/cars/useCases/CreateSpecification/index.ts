@@ -9,12 +9,14 @@ import { SpecificationsRepository } from '../../repository/implementations/Speci
 import { CreateSpecificationController } from './CreateSpecificationController';
 import { CreateSpecificationUseCase } from './CreateSpecificationUseCase';
 
-const categoriesSpecification = new SpecificationsRepository();
-const createSpecificationUseCase = new CreateSpecificationUseCase(
-    categoriesSpecification
-);
-const createSpecification = new CreateSpecificationController(
-    createSpecificationUseCase
-);
+export default (): CreateSpecificationController => {
+    const categoriesSpecification = new SpecificationsRepository();
+    const createSpecificationUseCase = new CreateSpecificationUseCase(
+        categoriesSpecification
+    );
+    const createSpecification = new CreateSpecificationController(
+        createSpecificationUseCase
+    );
 
-export { createSpecification };
+    return createSpecification;
+};

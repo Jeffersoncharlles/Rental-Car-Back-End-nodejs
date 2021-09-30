@@ -15,5 +15,6 @@ export default (): CreateCategoryController => {
         categoriesRepository
     );
     const createCategory = new CreateCategoryController(createCategoryUseCase);
+
     return createCategory;
 };

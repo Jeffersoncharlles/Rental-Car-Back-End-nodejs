@@ -14,8 +14,8 @@ class GetAllCategoryUseCase {
     // tem que ter o private para ter acesso
     constructor(private categoriesRepository: ICategoriesRepository) {}
 
-    execute(): Category[] {
-        const categories = this.categoriesRepository.getAll();
+    async execute(): Promise<Category[]> {
+        const categories = await this.categoriesRepository.getAll();
 
         return categories;
     }

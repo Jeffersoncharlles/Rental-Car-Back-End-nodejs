@@ -5,8 +5,8 @@ import { GetAllCategoryUseCase } from './GetAllCategoryUseCase';
 class GetAllCategoryController {
     constructor(private getAllCategoryUseCase: GetAllCategoryUseCase) {}
 
-    handle(request: Request, response: Response): Response {
-        const all = this.getAllCategoryUseCase.execute();
+    async handle(request: Request, response: Response): Promise<Response> {
+        const all = await this.getAllCategoryUseCase.execute();
         return response.json(all);
     }
 }
