@@ -1,4 +1,6 @@
-import { Category } from '../../model/Category';
+import { getRepository, Repository } from 'typeorm';
+
+import { Category } from '../../entities/Category';
 import {
     ICategoriesRepository,
     ICreateCategoryDTO,
@@ -7,53 +9,45 @@ import {
 // Singleton Pattern
 
 class CategoriesRepository implements ICategoriesRepository {
-    private categories: Category[];
+    private repository: Repository<Category>;
+
+    constructor() {
+        this.repository = getRepository(Category);
+    }
 
     private static INSTANCE: CategoriesRepository;
-
-    private constructor() {
-        this.categories = [];
-    }
-
-    public static getInstance(): CategoriesRepository {
-        if (!CategoriesRepository.INSTANCE) {
-            // SE NAO TIVER NENHUM VALOR ATRIBUIDO A ELE
-            CategoriesRepository.INSTANCE = new CategoriesRepository();
-        }
-        return CategoriesRepository.INSTANCE;
-        // se ja tiver agente returna essa instancia
-    }
+    // public static getInstance(): CategoriesRepository {
+    //     if (!CategoriesRepository.INSTANCE) {
+    //         // SE NAO TIVER NENHUM VALOR ATRIBUIDO A ELE
+    //         CategoriesRepository.INSTANCE = new CategoriesRepository();
+    //     }
+    //     return CategoriesRepository.INSTANCE;
+    //     // se ja tiver agente returna essa instancia
+    // }
 
     /*= =================================CREATE============================================ */
     /*= ================================================================================== */
-    create({ description, name }: ICreateCategoryDTO): void {
+    async create({ description, name }: ICreateCategoryDTO): Promise<void> {
         // void para falar que nao tem retorno
 
-        const category = new Category();
-
-        Object.assign(category, {
-            name,
+        const category = this.repository.create({
             description,
-            created_at: new Date(),
+            name,
         });
-        // isso e mesma coisa de eu da um category.name
 
-        // category.name = name;
-        // category.description = description;
-        // category.created_at = new Date();
-
-        this.categories.push(category);
-        // push ele e um insert dentro do array
+        await this.repository.save(category);
     }
     /*= ================================================================================== */
     /*= =================================GET-ALL============================================ */
-    getAll(): Category[] {
-        return this.categories;
+    async getAll(): Promise<Category[]> {
+        const categories = await this.repository.find();
+        return categories;
     }
     /*= ================================================================================== */
     /*= =================================FIND-BY-NAME====================================== */
-    findByName(name: string): Category {
-        const category = this.categories.find((c) => c.name === name);
+    async findByName(name: string): Promise<Category> {
+        // Select * from categories where name = "name" limite 1
+        const category = await this.repository.findOne({ name });
         return category;
     }
     /*= ================================================================================== */

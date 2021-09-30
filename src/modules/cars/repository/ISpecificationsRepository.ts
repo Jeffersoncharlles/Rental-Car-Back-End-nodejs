@@ -2,7 +2,7 @@
 interface contrato 
 */
 
-import { Specification } from '../model/Specification';
+import { Specification } from '../entities/Specification';
 
 // DTO -> DATA TRANSFER OBJECT
 interface ICreatSpecificationDTO {

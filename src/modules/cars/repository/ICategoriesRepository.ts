@@ -2,7 +2,7 @@
 interface contrato 
 */
 
-import { Category } from '../model/Category';
+import { Category } from '../entities/Category';
 
 // DTO -> DATA TRANSFER OBJECT
 interface ICreateCategoryDTO {
@@ -11,9 +11,9 @@ interface ICreateCategoryDTO {
 }
 
 interface ICategoriesRepository {
-    findByName(name: string): Category;
-    getAll(): Category[];
-    create({ name, description }: ICreateCategoryDTO): void;
+    findByName(name: string): Promise<Category>;
+    getAll(): Promise<Category[]>;
+    create({ name, description }: ICreateCategoryDTO): Promise<void>;
 }
 
 export { ICategoriesRepository, ICreateCategoryDTO };

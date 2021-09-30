@@ -10,8 +10,12 @@ import { GetAllCategoryController } from './GetAllCategoryController';
 import { GetAllCategoryUseCase } from './GetAllCategoryUseCase';
 
 // nao vou criar mais a new aqui vou so chamar
-const categoriesRepository = CategoriesRepository.getInstance();
-const getAllCategoryUseCase = new GetAllCategoryUseCase(categoriesRepository);
-const getAllCategory = new GetAllCategoryController(getAllCategoryUseCase);
+export default (): GetAllCategoryController => {
+    const categoriesRepository = new CategoriesRepository();
+    const getAllCategoryUseCase = new GetAllCategoryUseCase(
+        categoriesRepository
+    );
+    const getAllCategory = new GetAllCategoryController(getAllCategoryUseCase);
 
-export { getAllCategory };
+    return getAllCategory;
+};
