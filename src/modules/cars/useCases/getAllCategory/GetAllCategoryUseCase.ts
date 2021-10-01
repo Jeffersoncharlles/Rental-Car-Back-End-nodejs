@@ -7,12 +7,18 @@
 #
 */
 
+import { inject, injectable } from 'tsyringe';
+
 import { Category } from '../../entities/Category';
 import { ICategoriesRepository } from '../../repository/ICategoriesRepository';
 
+@injectable()
 class GetAllCategoryUseCase {
     // tem que ter o private para ter acesso
-    constructor(private categoriesRepository: ICategoriesRepository) {}
+    constructor(
+        @inject('CategoriesRepository')
+        private categoriesRepository: ICategoriesRepository
+    ) {}
 
     async execute(): Promise<Category[]> {
         const categories = await this.categoriesRepository.getAll();

@@ -1,12 +1,12 @@
 import { Response, Request } from 'express';
+import { container } from 'tsyringe';
 
 import { GetAllCategoryUseCase } from './GetAllCategoryUseCase';
 
 class GetAllCategoryController {
-    constructor(private getAllCategoryUseCase: GetAllCategoryUseCase) {}
-
     async handle(request: Request, response: Response): Promise<Response> {
-        const all = await this.getAllCategoryUseCase.execute();
+        const getAllCategoryUseCase = container.resolve(GetAllCategoryUseCase);
+        const all = await getAllCategoryUseCase.execute();
         return response.json(all);
     }
 }

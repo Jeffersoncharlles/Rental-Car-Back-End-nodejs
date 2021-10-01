@@ -15,14 +15,20 @@
 # sempre conhecer a interface e nunca a implementacao
 */
 
+import { inject, injectable } from 'tsyringe';
+
 import { ISpecificationsRepository } from '../../repository/ISpecificationsRepository';
 
 interface IRequest {
     name: string;
     description: string;
 }
+@injectable()
 class CreateSpecificationUseCase {
-    constructor(private specificationsRepository: ISpecificationsRepository) {}
+    constructor(
+        @inject('SpecificationsRepository')
+        private specificationsRepository: ISpecificationsRepository
+    ) {}
 
     async execute({ name, description }: IRequest): Promise<void> {
         const specificationAlreadyExists =
