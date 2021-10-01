@@ -1,16 +1,22 @@
-/* ##############################################################################
-# File: Specification.ts                                                       #
-# Project: rentalbackendx                                                      #
-# Created Date: 2021-09-24 01:41:00                                            #
-# Author: Jefferson Charlles                                                   #
-############################################################################## */
+/** ============================================
+ *               MODEL SPECIFICATIONS
+ *=============================================* */
 
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
+@Entity('specifications')
 class Specification {
+    @PrimaryColumn()
     id?: string;
+
+    @Column()
     name: string;
+
+    @Column()
     description: string;
+
+    @CreateDateColumn()
     created_at: Date;
 
     constructor() {
