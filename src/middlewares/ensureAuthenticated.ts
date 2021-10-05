@@ -18,7 +18,7 @@ const ensureAuthenticated = async (
     const authHeader = request.headers.authorization;
 
     if (!authHeader) {
-        throw new AppError('token missing');
+        throw new AppError('token missing', 401);
         // se nao tiver nada ja manda vazar
     }
 
@@ -46,12 +46,12 @@ const ensureAuthenticated = async (
         const user = await usersRepository.findById(user_id);
 
         if (!user) {
-            throw new AppError('User does not exists!');
+            throw new AppError('User does not exists!', 401);
         }
 
         next();
     } catch (error) {
-        throw new AppError('Invalid token!');
+        throw new AppError('Invalid token!', 401);
     }
 };
 
