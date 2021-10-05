@@ -11,6 +11,8 @@ class UsersRepository implements IUsersRepository {
         this.repository = getRepository(User);
     }
 
+    /*= ====== DIVISION ======= */
+    /*= ====== create ======= */
     async create({
         name,
         email,
@@ -26,7 +28,14 @@ class UsersRepository implements IUsersRepository {
 
         await this.repository.save(user);
     }
-
+    /*= ====== DIVISION ======= */
+    /*= ====== findById ======= */
+    async findById(id: string): Promise<User> {
+        const user = await this.repository.findOne(id);
+        return user;
+    }
+    /*= ====== DIVISION ======= */
+    /*= ====== findByEmail ======= */
     async findByEmail(email: string): Promise<User> {
         const user = await this.repository.findOne({ email });
 
