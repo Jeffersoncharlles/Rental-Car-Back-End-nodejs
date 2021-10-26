@@ -1,30 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add express-async-erros
+  C:\Program Files\nodejs\node.exe C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --dev jest @types/jest
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python39\Scripts\;C:\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-11.0.11_9\bin;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools;C:\Users\Jefferson\AppData\Local\Yarn\bin;C:\Program Files\Git\cmd;C:\Users\Jefferson\AppData\Local\Microsoft\WindowsApps;C:\Users\Jefferson\AppData\Roaming\npm;C:\Users\Jefferson\AppData\Local\Programs\Microsoft VS Code\bin;C:\xampp\php;C:\Program Files\heroku\bin;C:\adb;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Jefferson\AppData\Local\Microsoft\WindowsApps;C:\Users\Jefferson\AppData\Roaming\npm;C:\Users\Jefferson\AppData\Local\Programs\Microsoft VS Code\bin;C:\xampp\php;C:\Program Files\heroku\bin
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-11.0.12_7\bin;C:\Windows\system32\config\systemprofile\AppData\Roaming\npm;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\Jefferson\AppData\Local\Microsoft\WindowsApps;C:\Users\Jefferson\AppData\Roaming\npm;C:\Users\Jefferson\AppData\Roaming\npm;
 
 Yarn version: 
-  1.22.10
+  1.22.15
 
 Node version: 
-  14.17.3
+  14.18.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/express-async-erros: Not found
-      at Request.params.callback [as _callback] (C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
-      at Request.self.callback (C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
-      at Request.emit (events.js:375:28)
-      at Request.<anonymous> (C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
-      at Request.emit (events.js:375:28)
-      at IncomingMessage.<anonymous> (C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
-      at Object.onceWrapper (events.js:481:28)
-      at IncomingMessage.emit (events.js:387:35)
-      at endReadableNT (internal/streams/readable.js:1317:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  Error: EPERM: operation not permitted, unlink 'C:\Workspace\nodejs\rentalbackendx\node_modules\.bin\ts-node-dev'
 
 npm manifest: 
   {
@@ -64,6 +54,7 @@ npm manifest:
       "bcryptjs": "^2.4.3",
       "csv-parse": "^4.16.3",
       "express": "^4.17.1",
+      "express-async-errors": "^3.1.1",
       "jsonwebtoken": "^8.5.1",
       "multer": "^1.4.3",
       "pg": "^8.7.1",
@@ -1137,6 +1128,11 @@ Lockfile:
     version "1.8.1"
     resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
     integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+  
+  express-async-errors@^3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/express-async-errors/-/express-async-errors-3.1.1.tgz#6053236d61d21ddef4892d6bd1d736889fc9da41"
+    integrity sha512-h6aK1da4tpqWSbyCa3FxB/V6Ehd4EEB15zyQq9qe75OZBp0krinNKuH4rAY+S/U/2I36vdLAUFSjQJ+TFmODng==
   
   express@^4.17.1:
     version "4.17.1"
