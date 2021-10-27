@@ -29,3 +29,5 @@ class UsersRepositortyInMemory implements IUsersRepository {
         return this.users.find((u) => u.id === id);
     }
 }
+
+export { UsersRepositortyInMemory };
