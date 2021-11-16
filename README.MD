@@ -1,0 +1,38 @@
+## RentalX-Backend
+
+**RF** => Requisitos funcionais
+
+**RNF** => Requisitos não funcionais
+
+**RN** => Regras de negócio
+
+# Cadastro de carro
+
+**RF**
+Deve ser possível cadastrar um novo carro
+
+**RN**
+Não deve ser possivel cadastrar um carro com uma placa já existente
+Não deve ser possivel alterar a placa de um carro já cadastrado
+O carro deve ser cadastrado com disponibilidade por padrão
+O usuario responsavel pelo cadastro do carro deve ser adm.
+
+# Listagem de carros
+
+**RF**
+Deve ser possivel listar todos carros disponíveis
+
+**RN**
+O usuario não precisa estar logado no sistema.
+
+# Cadastro de Especificação no carro
+
+**RF**
+Deve ser possivel cadastrar uma especificação para um carro
+Deve ser possivel listar todas as especificação
+Deve ser possivel listar todos os carros
+
+**RN**
+Não deve ser possivel cadastrar uma especificação para um carro não cadastrado
+Não deve ser possivel cadastrar uma especificação já existente para o mesmo carro
+O usuario responsavel pelo cadastro do carro deve ser adm.
