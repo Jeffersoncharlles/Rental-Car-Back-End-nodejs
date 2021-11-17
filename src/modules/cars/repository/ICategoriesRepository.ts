@@ -2,7 +2,7 @@
 interface contrato 
 */
 
-import { Category } from '../entities/Category';
+import { Category } from '../infra/typeorm/Category';
 
 // DTO -> DATA TRANSFER OBJECT
 interface ICreateCategoryDTO {
