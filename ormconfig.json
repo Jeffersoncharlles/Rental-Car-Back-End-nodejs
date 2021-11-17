@@ -5,8 +5,8 @@
     "username": "docker",
     "password": "rentx",
     "database": "rentx",
-    "entities": ["./src/modules/**/entities/migrations/*.ts"],
-    "migrations": ["./src/shared/infra/typeorm/*.ts"],
+    "entities": ["./src/modules/**/infra/typeorm/*.ts"],
+    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
     "cli": {
         "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }

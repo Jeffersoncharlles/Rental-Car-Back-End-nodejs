@@ -67,16 +67,16 @@ export class CreateCars1637105874435 implements MigrationInterface {
             })
         );
     }
-    /** =======================
-     * criando relacionamento estrangeiro
-     * referencedTableName = de onde ta vindo esse id
-     * referencedColumnNames =  e a coluna na tabela
-     * columnNames =  coluna da tabela criada agora
-     *
-     * onDelete = oque vai fazer quando tiver essa acao em categorias
-     *========================* */
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('cars');
     }
 }
+/** =======================
+ * criando relacionamento estrangeiro
+ * referencedTableName = de onde ta vindo esse id
+ * referencedColumnNames =  e a coluna na tabela
+ * columnNames =  coluna da tabela criada agora
+ *
+ * onDelete = oque vai fazer quando tiver essa acao em categorias
+ *========================* */
