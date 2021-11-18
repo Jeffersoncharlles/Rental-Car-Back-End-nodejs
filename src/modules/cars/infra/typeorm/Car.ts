@@ -25,7 +25,7 @@ class Car {
     daily_rate: number;
 
     @Column()
-    available = true;
+    available: boolean;
     // assim ele vai atribuir o valor como true e colocar como boolean
 
     @Column()
@@ -51,7 +51,7 @@ class Car {
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
-            // this.available = true;
+            this.available = true;
             // this.created_at = new Date();
         }
     }
