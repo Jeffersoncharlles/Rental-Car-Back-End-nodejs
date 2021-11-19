@@ -1,13 +1,24 @@
-import { createConnection, getConnectionOptions } from 'typeorm';
+import { Connection, createConnection, getConnectionOptions } from 'typeorm';
 
-interface IOptions {
-    host: string;
-}
+// interface IOptions {
+//     host: string;
+// }
 
-getConnectionOptions().then((options) => {
-    const newOptions = options as IOptions;
-    newOptions.host = 'database';
-    createConnection({
-        ...options,
-    });
-});
+// getConnectionOptions().then((options) => {
+//     const newOptions = options as IOptions;
+//     newOptions.host = 'database';
+//     createConnection({
+//         ...options,
+//     });
+// });
+
+// pegando a conexao e passando ela para ser usada na aplicacao
+export default async (host = 'database'): Promise<Connection> => {
+    const defaultOptions = await getConnectionOptions();
+
+    return createConnection(
+        Object.assign(defaultOptions, {
+            host,
+        })
+    );
+};
