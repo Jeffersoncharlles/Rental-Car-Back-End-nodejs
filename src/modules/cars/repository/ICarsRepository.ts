@@ -4,6 +4,7 @@ import { Car } from '../infra/typeorm/Car';
 interface ICarsRepository {
     create(data: ICreateCarDTO): Promise<Car>;
     findByLincesPlate(license_plate: string): Promise<Car>;
+    findAvailable(): Promise<Car[]>;
 }
 
 export { ICarsRepository };

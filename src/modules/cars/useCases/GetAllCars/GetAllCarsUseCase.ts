@@ -1,5 +1,17 @@
+/** ================================================================================================
+ *                                        WARNING HEADER
+ * listar todos os carros
+ *================================================================================================* */
+
+import { Car } from '../../infra/typeorm/Car';
+import { ICarsRepository } from '../../repository/ICarsRepository';
+
 class GetAllCarsUseCase {
-    async execute(): Promise<void> {}
+    constructor(private carsRepository: ICarsRepository) {}
+    async execute(): Promise<Car[]> {
+        const cars = await this.carsRepository.findAvailable();
+        return cars;
+    }
 }
 
 export { GetAllCarsUseCase };
