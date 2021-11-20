@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Response, Request, NextFunction } from 'express';
 
 import { UsersRepository } from '../../../../modules/accounts/infra/typeorm/repositories/UsersRepository';

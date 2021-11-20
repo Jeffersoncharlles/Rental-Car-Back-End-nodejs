@@ -10,13 +10,13 @@
 
 **RF**
 
--   Deve ser possível cadastrar um novo carro
+-   Deve ser possível cadastrar um novo carro [x]
 
 **RN**
 
--   Não deve ser possivel cadastrar um carro com uma placa já existente
--   O carro deve ser cadastrado com disponibilidade por padrão
--   O usuario responsavel pelo cadastro do carro deve ser adm.
+-   Não deve ser possivel cadastrar um carro com uma placa já existente [x]
+-   O carro deve ser cadastrado com disponibilidade por padrão [x]
+-   O usuario responsavel pelo cadastro do carro deve ser adm. [x]
 
 # Listagem de carros
 
