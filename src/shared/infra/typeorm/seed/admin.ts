@@ -18,6 +18,8 @@ async function create() {
             values('${id}','${name}','${email}','${password}','${license}', true, 'now()')
         `
     );
+
+    await connection.close;
 }
 
 create().then(() => console.log('User admin created!'));
