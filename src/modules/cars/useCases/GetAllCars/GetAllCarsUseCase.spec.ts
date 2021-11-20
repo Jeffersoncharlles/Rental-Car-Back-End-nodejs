@@ -11,7 +11,19 @@ describe('Get All Cars', () => {
     });
 
     it('should be able to get all available cars', async () => {
+        const car = await carsRepositoryInMemory.create({
+            name: 'New Car',
+            description: 'Description Car',
+            daily_rate: 100,
+            license_plate: 'ABC-xxxx',
+            fine_amount: 800,
+            brand: 'Brands',
+            category_id: '256f27ca-817f-4c4d-9570-ba2c1652176f',
+        });
+
         const cars = await getAllUseCase.execute();
-        console.log(cars);
+
+        expect(cars).toEqual([car]);
+        // espero que o cars seja igual o array com o carro
     });
 });
