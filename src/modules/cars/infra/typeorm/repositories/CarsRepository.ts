@@ -10,7 +10,8 @@ class CarsRepository implements ICarsRepository {
     constructor() {
         this.repository = getRepository(Car);
     }
-
+    /*= ================= DIVISION ================= */
+    /*= ================= create ================= */
     async create({
         name,
         description,
@@ -34,12 +35,43 @@ class CarsRepository implements ICarsRepository {
 
         return car;
     }
+    /*= ================= DIVISION ================= */
+    /*= ================= findByLincesPlate ================= */
     async findByLincesPlate(license_plate: string): Promise<Car> {
         const car = await this.repository.findOne({
             license_plate,
         });
 
         return car;
+    }
+    /*= ================= DIVISION ================= */
+    /*= ================= findAvailable ================= */
+
+    async findAvailable(
+        brand?: string,
+        category_id?: string,
+        name?: string
+    ): Promise<Car[]> {
+        const carsQuery = await this.repository
+            .createQueryBuilder('cars')
+            .where('available = :available', { available: true });
+
+        if (brand) {
+            carsQuery.andWhere('cars.brand = :brand', { brand });
+        }
+        if (name) {
+            carsQuery.andWhere('cars.name = :name', { name });
+        }
+        if (category_id) {
+            carsQuery.andWhere('cars.category_id = :category_id', {
+                category_id,
+            });
+        }
+
+        const cars = await carsQuery.getMany();
+
+        return cars;
+        // getMany e para retornar todos os resultados
     }
 }
 

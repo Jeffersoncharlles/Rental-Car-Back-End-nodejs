@@ -22,10 +22,10 @@
 
 **RF**
 
--   Deve ser possivel listar todos carros disponíveis
--   Deve ser possivel listar todos carros disponíveis pelo nome da categoria
--   Deve ser possivel listar todos carros disponíveis pelo nome da marca
--   Deve ser possivel listar todos carros disponíveis pelo nome da carro
+-   Deve ser possivel listar todos carros disponíveis [x]
+-   Deve ser possivel listar todos carros disponíveis pelo nome da categoria [x]
+-   Deve ser possivel listar todos carros disponíveis pelo nome da marca [x]
+-   Deve ser possivel listar todos carros disponíveis pelo nome da carro [x]
 
 **RN**
 
