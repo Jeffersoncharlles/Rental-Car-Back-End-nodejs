@@ -3,6 +3,8 @@
  * listar todos os carros
  *================================================================================================* */
 
+import { inject, injectable } from 'tsyringe';
+
 import { Car } from '../../infra/typeorm/Car';
 import { ICarsRepository } from '../../repository/ICarsRepository';
 
@@ -12,8 +14,12 @@ interface IRequest {
     name?: string;
 }
 
+@injectable()
 class GetAvailableCarsUseCase {
-    constructor(private carsRepository: ICarsRepository) {}
+    constructor(
+        @inject('CarsRepository')
+        private carsRepository: ICarsRepository
+    ) {}
     async execute({ category_id, brand, name }: IRequest): Promise<Car[]> {
         const cars = await this.carsRepository.findAvailable(
             brand,
