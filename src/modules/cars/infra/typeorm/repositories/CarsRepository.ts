@@ -57,13 +57,13 @@ class CarsRepository implements ICarsRepository {
             .where('available = :available', { available: true });
 
         if (brand) {
-            carsQuery.andWhere('cars.brand = :brand', { brand });
+            carsQuery.andWhere('brand = :brand', { brand });
         }
         if (name) {
-            carsQuery.andWhere('cars.name = :name', { name });
+            carsQuery.andWhere('name = :name', { name });
         }
         if (category_id) {
-            carsQuery.andWhere('cars.category_id = :category_id', {
+            carsQuery.andWhere('category_id = :category_id', {
                 category_id,
             });
         }
