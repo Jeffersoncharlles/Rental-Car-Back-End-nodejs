@@ -35,13 +35,11 @@
 
 **RF**
 
--   Deve ser possivel cadastrar uma especificação para um carro
--   Deve ser possivel listar todas as especificação
--   Deve ser possivel listar todos os carros
+-   Deve ser possivel cadastrar uma especificação para um carro [x]
 
 **RN**
 
--   Não deve ser possivel cadastrar uma especificação para um carro não cadastrado
+-   Não deve ser possivel cadastrar uma especificação para um carro não cadastrado [x]
 -   Não deve ser possivel cadastrar uma especificação já existente para o mesmo carro
 -   O usuario responsavel pelo cadastro deve ser adm.
 
