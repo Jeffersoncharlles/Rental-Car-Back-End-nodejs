@@ -9,6 +9,9 @@ class CarsImageRepository implements ICarsImagesRepository {
     constructor() {
         this.repository = getRepository(CarImage);
     }
+    /*= ================= DIVISION ================= */
+    /*= ================= DIVISION ================= */
+
     async create(car_id: string, image_name: string): Promise<CarImage> {
         const carImage = this.repository.create({
             car_id,
@@ -19,9 +22,16 @@ class CarsImageRepository implements ICarsImagesRepository {
 
         return carImage;
     }
+
+    /*= ================= DIVISION ================= */
+    /*= ================= DIVISION ================= */
     async findById(id: string): Promise<CarImage> {
-        throw new Error('Method not implemented.');
+        const carImage = await this.repository.findOne(id);
+        return carImage;
     }
+
+    /*= ============================================ */
+    /*= ============================================ */
 }
 
 export { CarsImageRepository };

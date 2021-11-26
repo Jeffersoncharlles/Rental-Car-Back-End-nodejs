@@ -5,6 +5,9 @@ import { ICarsRepository } from '../ICarsRepository';
 
 class CarsRepositoryInMemory implements ICarsRepository {
     cars: Car[] = [];
+
+    /*= ========================================================================== */
+    /*= =============================== CREATE =============================== */
     async create({
         name,
         description,
@@ -33,10 +36,14 @@ class CarsRepositoryInMemory implements ICarsRepository {
         return cars;
     }
 
+    /*= ========================================================================== */
+    /*= ========================== FIND-BY-LINCES PLATE ========================== */
     async findByLincesPlate(license_plate: string): Promise<Car> {
         return this.cars.find((car) => car.license_plate === license_plate);
     }
 
+    /*= ========================================================================== */
+    /*= ============================= FIND-AVAILABLE ============================= */
     async findAvailable(
         brand?: string,
         category_id?: string,
@@ -80,9 +87,12 @@ class CarsRepositoryInMemory implements ICarsRepository {
         return cars;
     }
 
+    /*= ========================================================================== */
+    /*= =============================== FIND-BY-ID =============================== */
     async findById(id: string): Promise<Car> {
         return this.cars.find((car) => car.id === id);
     }
+    /*= ========================================================================== */
 }
 
 export { CarsRepositoryInMemory };

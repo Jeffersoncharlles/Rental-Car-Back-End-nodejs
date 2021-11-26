@@ -79,6 +79,8 @@ class CarsRepository implements ICarsRepository {
         // getMany e para retornar todos os resultados
     }
 
+    /*= ================= DIVISION ================= */
+    /*= ================= FindByID ================= */
     async findById(id: string): Promise<Car> {
         const car = await this.repository.findOne(id);
         return car;
