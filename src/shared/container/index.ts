@@ -10,6 +10,8 @@ import { ICarsImagesRepository } from '../../modules/cars/repository/ICarsImages
 import { ICarsRepository } from '../../modules/cars/repository/ICarsRepository';
 import { ICategoriesRepository } from '../../modules/cars/repository/ICategoriesRepository';
 import { ISpecificationsRepository } from '../../modules/cars/repository/ISpecificationsRepository';
+import { RentalsRepository } from '../../modules/rentals/infra/typeorm/repositories/RentalsRepository';
+import { IRentalsRepository } from '../../modules/rentals/repository/IRentalsRepository';
 /** =======================
  *     COMMENT BLOCK
  *  Interfaces de repositorios
@@ -37,4 +39,9 @@ container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
 container.registerSingleton<ICarsImagesRepository>(
     'CarsImagesRepository',
     CarsImageRepository
+);
+
+container.registerSingleton<IRentalsRepository>(
+    'RentalsRepository',
+    RentalsRepository
 );
