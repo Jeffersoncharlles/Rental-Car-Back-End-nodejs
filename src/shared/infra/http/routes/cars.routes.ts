@@ -24,7 +24,12 @@ carsRoutes.post(
 /*= ================================================================================== */
 carsRoutes.get('/available', getAvailableCarsController.handle);
 /*= ================================================================================== */
-carsRoutes.post('specifications/:id', createCarSpecificationController.handle);
+carsRoutes.post(
+    '/specifications/:id',
+    ensureAuthenticated,
+    ensureAdmin,
+    createCarSpecificationController.handle
+);
 /*= ================================================================================== */
 
 export { carsRoutes };

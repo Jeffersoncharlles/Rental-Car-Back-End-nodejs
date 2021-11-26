@@ -41,23 +41,22 @@
 
 -   Não deve ser possivel cadastrar uma especificação para um carro não cadastrado [x]
 -   Não deve ser possivel cadastrar uma especificação já existente para o mesmo carro
--   O usuario responsavel pelo cadastro deve ser adm.
+-   O usuario responsavel pelo cadastro deve ser adm.[x]
 
 # Cadastro de imagens do carro
 
 **RF**
 
--   Deve ser possivel listar todos os carros
--   Deve ser possivel cadastrar a imagem do carro
+-   Deve ser possivel cadastrar a imagem do carro [x]
 
 **RNF**
 
--   Utilizar o multer para upload dos arquivos
+-   Utilizar o multer para upload dos arquivos [x]
 
 **RN**
 
--   O usuario deve poder cadastrar mais de uma imagem para o mesmo carro
--   O usuario responsavel pelo cadastro deve ser adm.
+-   O usuario deve poder cadastrar mais de uma imagem para o mesmo carro [x]
+-   O usuario responsavel pelo cadastro deve ser adm. [x]
 
 # Aluguel de carro
 
