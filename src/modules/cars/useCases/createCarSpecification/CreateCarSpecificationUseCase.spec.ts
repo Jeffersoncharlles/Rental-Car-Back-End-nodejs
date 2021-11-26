@@ -39,7 +39,12 @@ describe('Create Car Specification', () => {
             category_id: 'category',
         });
 
-        const specifications_id = ['23123', '23123123'];
+        const specification = await specificationsRepository.create({
+            description: 'test',
+            name: 'test',
+        });
+
+        const specifications_id = [specification.id];
 
         await createCarSpecificationUseCase.execute({
             car_id: car.id,

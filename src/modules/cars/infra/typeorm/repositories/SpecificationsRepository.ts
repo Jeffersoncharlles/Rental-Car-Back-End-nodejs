@@ -12,14 +12,20 @@ class SpecificationsRepository implements ISpecificationsRepository {
     constructor() {
         this.repository = getRepository(Specification);
     }
+
     /*= ================================================================================== */
     /*= =================================CREATE============================================ */
-    async create({ name, description }: ICreatSpecificationDTO): Promise<void> {
+    async create({
+        name,
+        description,
+    }: ICreatSpecificationDTO): Promise<Specification> {
         const specification = this.repository.create({
             name,
             description,
         });
-        await this.repository.save(specification);
+        const specifications = await this.repository.save(specification);
+
+        return specifications;
     }
     /*= ================================================================================== */
     /*= ==============================FIND-BY-NAME============================================ */
@@ -35,7 +41,10 @@ class SpecificationsRepository implements ISpecificationsRepository {
         return getAll;
     }
     /*= ================================================================================== */
-    /*= =================================GET-ALL============================================ */
+    /*= =================================FIND-BY-IDS============================================ */
+    async findByIds(ids: string[]): Promise<Specification[]> {
+        throw new Error('Method not implemented.');
+    }
 }
 
 export { SpecificationsRepository };
