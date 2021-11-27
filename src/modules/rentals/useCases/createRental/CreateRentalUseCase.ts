@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+import { IDateProvider } from 'src/shared/container/providers/DateProvider/IDateProvider';
 import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '../../../../shared/errors/AppError';
@@ -14,13 +16,15 @@ interface IRequest {
 class CreateRentalUseCase {
     constructor(
         // @inject("RentalsRepository")
-        private rentalRepository: IRentalsRepository
+        private rentalRepository: IRentalsRepository,
+        private dateProvider: IDateProvider
     ) {}
     async execute({
         user_id,
         car_id,
         expected_return_date,
     }: IRequest): Promise<Rental> {
+        const compareHours = 24;
         const carUnavailable = await this.rentalRepository.findByCar(car_id);
 
         if (carUnavailable) {
@@ -32,6 +36,18 @@ class CreateRentalUseCase {
 
         if (rentalOpenToUser) {
             throw new AppError("There's a rental in progress for user!");
+        }
+
+        // o aluguel deve ter 24 horas minima
+        const dateNow = this.dateProvider.dateNow();
+        const compare = this.dateProvider.compareInHours(
+            dateNow,
+            expected_return_date
+        );
+        // ok Format date
+
+        if (compare < compareHours) {
+            throw new AppError('Invalid return time!');
         }
 
         const rental = await this.rentalRepository.create({
