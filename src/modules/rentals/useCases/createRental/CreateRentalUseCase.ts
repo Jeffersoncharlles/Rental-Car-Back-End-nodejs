@@ -1,7 +1,6 @@
-import dayjs from 'dayjs';
-import { IDateProvider } from 'src/shared/container/providers/DateProvider/IDateProvider';
 import { inject, injectable } from 'tsyringe';
 
+import { IDateProvider } from '../../../../shared/container/providers/DateProvider/IDateProvider';
 import { AppError } from '../../../../shared/errors/AppError';
 import { Rental } from '../../infra/typeorm/Rental';
 import { IRentalsRepository } from '../../repository/IRentalsRepository';
@@ -12,11 +11,13 @@ interface IRequest {
     expected_return_date: Date;
 }
 
-// @injectable()
+@injectable()
 class CreateRentalUseCase {
     constructor(
-        // @inject("RentalsRepository")
+        @inject('RentalsRepository')
         private rentalRepository: IRentalsRepository,
+
+        @inject('DayjsDateProvider')
         private dateProvider: IDateProvider
     ) {}
     async execute({
@@ -24,7 +25,7 @@ class CreateRentalUseCase {
         car_id,
         expected_return_date,
     }: IRequest): Promise<Rental> {
-        const compareHours = 24;
+        const compareHours = 23;
         const carUnavailable = await this.rentalRepository.findByCar(car_id);
 
         if (carUnavailable) {

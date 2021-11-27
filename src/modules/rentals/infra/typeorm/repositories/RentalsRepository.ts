@@ -1,23 +1,45 @@
+import { getRepository, Repository } from 'typeorm';
+
+import { ICreateRentalDTO } from '../../../dtos/ICreateRentalDTO';
 import { IRentalsRepository } from '../../../repository/IRentalsRepository';
 import { Rental } from '../Rental';
 
 class RentalsRepository implements IRentalsRepository {
-    async create(
-        user_id: string,
-        car_id: string,
-        expected_return_date: Date
-    ): Promise<void> {
-        throw new Error('Method not implemented.');
+    private repository: Repository<Rental>;
+
+    constructor() {
+        this.repository = getRepository(Rental);
+    }
+    async create({
+        car_id,
+        user_id,
+        expected_return_date,
+    }: ICreateRentalDTO): Promise<Rental> {
+        const rental = this.repository.create({
+            car_id,
+            user_id,
+            expected_return_date,
+        });
+
+        await this.repository.save(rental);
+
+        return rental;
     }
     async findByCar(car_id: string): Promise<Rental> {
-        throw new Error('Method not implemented.');
+        const openByCar = await this.repository.findOne({ car_id });
+
+        return openByCar;
     }
     async findByID(id: string): Promise<Rental> {
-        throw new Error('Method not implemented.');
+        const findId = await this.repository.findOne({ id });
+
+        return findId;
     }
 
     async findByOpenRentalByUser(user_id: string): Promise<Rental> {
-        throw new Error('Method not implemented.');
+        const openByUser = await this.repository.findOne({ user_id });
+
+        return openByUser;
     }
 }
 
