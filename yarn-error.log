@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add supertest @types/supertest -D
 
 PATH: 
   C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-11.0.12_7\bin;C:\Windows\system32\config\systemprofile\AppData\Roaming\npm;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jefferson\AppData\Roaming\npm\node_modules\yarn\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\ProgramData\UNIVALI\Portugol Studio;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Users\Jefferson\AppData\Local\Microsoft\WindowsApps;C:\Users\Jefferson\AppData\Roaming\npm;C:\Users\Jefferson\AppData\Roaming\npm
@@ -1554,9 +1554,9 @@ Lockfile:
       whatwg-mimetype "^2.3.0"
       whatwg-url "^8.0.0"
   
-  dayjs@^1.10.7:
+  dayjs@^1.10.4:
     version "1.10.7"
-    resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+    resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.10.7.tgz"
     integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
   
   debug@2.6.9, debug@^2.6.9:
