@@ -1,6 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '../../../../shared/errors/AppError';
+import { Rental } from '../../infra/typeorm/Rental';
 import { IRentalsRepository } from '../../repository/IRentalsRepository';
 
 interface IRequest {
@@ -19,7 +20,7 @@ class CreateRentalUseCase {
         user_id,
         car_id,
         expected_return_date,
-    }: IRequest): Promise<void> {
+    }: IRequest): Promise<Rental> {
         const carUnavailable = await this.rentalRepository.findByCar(car_id);
 
         if (carUnavailable) {
@@ -32,6 +33,14 @@ class CreateRentalUseCase {
         if (rentalOpenToUser) {
             throw new AppError("There's a rental in progress for user!");
         }
+
+        const rental = await this.rentalRepository.create({
+            user_id,
+            car_id,
+            expected_return_date,
+        });
+
+        return rental;
     }
 }
 
