@@ -7,12 +7,6 @@ class RentalsRepositoryInMemory implements IRentalsRepository {
 
     /*= ================= DIVISION ================= */
     /*= ================= DIVISION ================= */
-    async findByID(id: string): Promise<Rental> {
-        throw new Error('Method not implemented.');
-    }
-
-    /*= ================= DIVISION ================= */
-    /*= ================= DIVISION ================= */
     async create({
         car_id,
         user_id,
@@ -50,6 +44,16 @@ class RentalsRepositoryInMemory implements IRentalsRepository {
 
     /*= ================= DIVISION ================= */
     /*= ================= DIVISION ================= */
+
+    async findByUserId(user_id: string): Promise<Rental[]> {
+        return this.rentals.filter((rental) => rental.user_id === user_id);
+    }
+
+    /*= ================= DIVISION ================= */
+    /*= ================= DIVISION ================= */
+    async findByID(id: string): Promise<Rental> {
+        return this.rentals.find((rental) => rental.id === id);
+    }
 }
 
 export { RentalsRepositoryInMemory };
