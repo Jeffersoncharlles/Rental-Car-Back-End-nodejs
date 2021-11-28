@@ -6,6 +6,12 @@ import { IDateProvider } from '../IDateProvider';
 dayjs.extend(utc);
 
 class DayjsDateProvider implements IDateProvider {
+    compareInDays(start: Date, end: Date): number {
+        const endConvert = this.convertToUtc(end);
+        const startConvert = this.convertToUtc(start);
+        const compare = dayjs(endConvert).diff(startConvert, 'day', true);
+        return compare;
+    }
     dateNow(): Date {
         return dayjs().toDate();
     }
@@ -15,7 +21,7 @@ class DayjsDateProvider implements IDateProvider {
     compareInHours(start: Date, end: Date): number {
         const endConvert = this.convertToUtc(end);
         const startConvert = this.convertToUtc(start);
-        const compare = dayjs(startConvert).diff(endConvert, 'hours', true);
+        const compare = dayjs(endConvert).diff(startConvert, 'hours', true);
         return compare;
     }
 }

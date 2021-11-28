@@ -69,7 +69,7 @@
 -   O aluguel deve ter duracao minima de 24 Horas. [x]
 -   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo usuario [x]
 -   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo carro [x]
--   ao realizar um aluguel status carro deve ser alterado para indisponivel
+-   ao realizar um aluguel status carro deve ser alterado para indisponivel [x]
 
 # Devolucao de carro
 
