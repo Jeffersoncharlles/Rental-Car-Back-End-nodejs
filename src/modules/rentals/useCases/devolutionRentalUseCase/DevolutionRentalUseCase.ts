@@ -24,8 +24,9 @@ class DevolutionRentalUseCase {
 
     async execute({ id, user_id }: IRequest): Promise<Rental> {
         const minimumDaily = 1;
-        const car = await this.carsRepository.findById(id);
         const rental = await this.rentalsRepository.findByID(id);
+        const car = await this.carsRepository.findById(rental.car_id);
+
         if (!rental) {
             throw new AppError('Rental this not Exists!');
         }
@@ -62,6 +63,7 @@ class DevolutionRentalUseCase {
         // o dia final e agora
         // e to passando para o valor total que esta agora depois de multas e dias
 
+        console.log(rental);
         await this.rentalsRepository.create(rental);
         await this.carsRepository.updateAvailable(car.id, true);
         // true para dizer que ta liberado partir de agora
