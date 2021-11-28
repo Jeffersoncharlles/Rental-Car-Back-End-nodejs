@@ -63,7 +63,6 @@ class DevolutionRentalUseCase {
         // o dia final e agora
         // e to passando para o valor total que esta agora depois de multas e dias
 
-        console.log(rental);
         await this.rentalsRepository.create(rental);
         await this.carsRepository.updateAvailable(car.id, true);
         // true para dizer que ta liberado partir de agora
