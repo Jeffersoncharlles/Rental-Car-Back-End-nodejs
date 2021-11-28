@@ -62,10 +62,26 @@
 
 **RF**
 
--   Deve ser possivel cadastrar um aluguel
+-   Deve ser possivel cadastrar um aluguel [x]
 
 **RN**
 
--   O aluguel deve ter duracao minima de 24 Horas.
--   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo usuario
--   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo carro
+-   O aluguel deve ter duracao minima de 24 Horas. [x]
+-   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo usuario [x]
+-   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo carro [x]
+-   ao realizar um aluguel status carro deve ser alterado para indisponivel
+
+# Devolucao de carro
+
+**RF**
+
+-   Deve ser possivel realizar a devolucao de um carro
+
+**RN**
+
+-   se o carro for devolvido com menos de 24 horas, devera ser cobrado diaria completa
+-   ao realizar a devolucao , o carro devera ser liberado para outro aluguel
+-   ao realizar a devolucao , o usuario devera ser liberado para outro aluguel
+-   ao realizar a devolucao , devera ser calculado o total do aluguel
+-   caso o horario de devolucao seja superior ao horario previsto dever ser cobrado multa por dia
+-   caso haja multa, devera ser somado ao total do aluguel
