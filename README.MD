@@ -90,8 +90,8 @@
 
 **RF**
 
--   deve ser possivel realizar a busca de todos os alugueis para o usuario
+-   deve ser possivel realizar a busca de todos os alugueis para o usuario [x]
 
 **RN**
 
--   o usuario deve estar logado na aplicacao
+-   o usuario deve estar logado na aplicacao [x]

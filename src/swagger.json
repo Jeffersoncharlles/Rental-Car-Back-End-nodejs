@@ -1,68 +1,69 @@
 {
-    "openapi":"3.0.0",
-    "info":{
+    "openapi": "3.0.0",
+    "info": {
         "title": "Rentx Documentation",
         "description": "This is an API Rent",
-        "Version":"1.0.0",
-        "contact":{
-            "email":"contato@jefferdeveloper.com"
+        "Version": "1.0.0",
+        "contact": {
+            "email": "contato@jefferdeveloper.com"
         }
     },
-    "paths":{
-        "/categories":{
-            "post":{
-                "tags":["Category"],
+    "paths": {
+        "/categories": {
+            "post": {
+                "tags": ["Category"],
                 "summary": "Create a  category",
                 "description": "Create a new category",
-                "requestBody":{
-                    "content":{
-                        "application/json":{
-                            "schema":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "type":"string"
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
                                     },
-                                    "description":{
-                                        "type":"string"
+                                    "description": {
+                                        "type": "string"
                                     }
                                 },
-                                "example":{
+                                "example": {
                                     "name": "category name sample",
-                                    "description":"Category description sample"
+                                    "description": "Category description sample"
                                 }
                             }
                         }
                     }
                 },
-                "responses":{
-                    "201":{
-                        "description":"Created"
+                "responses": {
+                    "201": {
+                        "description": "Created"
                     },
-                    "500":{
-                        "description":"Category already exists"
+                    "500": {
+                        "description": "Category already exists"
                     }
                 }
             },
-            "get":{
-                "tags":["Category"],
+            "get": {
+                "tags": ["Category"],
                 "summary": "Get ALl category",
                 "description": "Get all  category",
-                "responses":{
-                    "200":{
-                        "description":"Success",
-                        "content":{
-                            "application/json":{
-                                "schema":{
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "type":"string"
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
                                             },
-                                            "description":{
-                                                "type":"string"
+                                            "description": {
+                                                "type": "string"
                                             }
                                         }
                                     }
@@ -73,72 +74,113 @@
                 }
             }
         },
-        "/categories/import":{
-            "post":{
-                "tags":["Category"],
-                "summary":"Upload a new Category",
-                "description":"Import a new Category",
-                "requestBody":{
-                    "content":{
-                        "multipart/form-data":{
-                            "schema":{
-                                "type":"object",
-                                "properties":{
-                                    "file":{
-                                        "type":"string",
-                                        "format":"binary"
+        "/categories/import": {
+            "post": {
+                "tags": ["Category"],
+                "summary": "Upload a new Category",
+                "description": "Import a new Category",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "responses":{
-                    "201":{
-                        "description":"Created"
+                "responses": {
+                    "201": {
+                        "description": "Created"
                     }
                 }
             }
         },
-        "/specifications":{
-            "post":{
-                "tags":["Specifications"],
-                "summary":"Create a specification",
-                "description":"Create a new specification",
-                "requestBody":{
-                    "content":{
-                        "application/json":{
-                            "schema":{
+        "/specifications": {
+            "post": {
+                "tags": ["Specifications"],
+                "summary": "Create a specification",
+                "description": "Create a new specification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
                                 "$ref": "#/definitions/Specification"
                             }
                         }
                     }
                 },
-                "responses":{
-                    "201":{
-                        "description":"Created"
+                "responses": {
+                    "201": {
+                        "description": "Created"
                     },
-                    "500":{
+                    "500": {
                         "description": "Specifications already exists"
+                    }
+                }
+            }
+        },
+        "/sessions": {
+            "post": {
+                "tags": ["Sessions"],
+                "summary": "Authentication user",
+                "description": "Authentication user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Email or password incorrect!"
                     }
                 }
             }
         }
     },
-    "definitions":{
-        "Specification":{
-            "type":"object",
-            "properties":{
-                "name":{
-                    "type":"string"
+    "definitions": {
+        "Specification": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
                 },
-                "description":{
-                    "type":"string"
+                "description": {
+                    "type": "string"
                 }
             },
-            "example":{
+            "example": {
                 "name": "specification name sample",
-                "description":"Specifications description sample"
+                "description": "Specifications description sample"
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
