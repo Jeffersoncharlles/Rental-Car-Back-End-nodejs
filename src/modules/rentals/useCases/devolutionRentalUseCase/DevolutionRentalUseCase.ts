@@ -43,7 +43,7 @@ class DevolutionRentalUseCase {
         // verificar se tem multa de atraso
         const delayCompare = this.dateProvider.compareInDays(
             this.dateProvider.dateNow(),
-            rental.expected_return_date
+            rental.start_date
         );
 
         // verificar quanto tem total de multas

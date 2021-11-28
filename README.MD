@@ -75,13 +75,23 @@
 
 **RF**
 
--   Deve ser possivel realizar a devolucao de um carro
+-   Deve ser possivel realizar a devolucao de um carro [x]
 
 **RN**
 
--   se o carro for devolvido com menos de 24 horas, devera ser cobrado diaria completa
--   ao realizar a devolucao , o carro devera ser liberado para outro aluguel
--   ao realizar a devolucao , o usuario devera ser liberado para outro aluguel
--   ao realizar a devolucao , devera ser calculado o total do aluguel
--   caso o horario de devolucao seja superior ao horario previsto dever ser cobrado multa por dia
--   caso haja multa, devera ser somado ao total do aluguel
+-   se o carro for devolvido com menos de 24 horas, devera ser cobrado diaria completa [x]
+-   ao realizar a devolucao , o carro devera ser liberado para outro aluguel [x]
+-   ao realizar a devolucao , o usuario devera ser liberado para outro aluguel [x]
+-   ao realizar a devolucao , devera ser calculado o total do aluguel [x]
+-   caso o horario de devolucao seja superior ao horario previsto dever ser cobrado multa por dia [x]
+-   caso haja multa, devera ser somado ao total do aluguel [x]
+
+# Listagem de Alugueis para usuario
+
+**RF**
+
+-   deve ser possivel realizar a busca de todos os alugueis para o usuario
+
+**RN**
+
+-   o usuario deve estar logado na aplicacao
