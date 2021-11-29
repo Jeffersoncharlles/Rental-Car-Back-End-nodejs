@@ -3,6 +3,7 @@ import { verify } from 'jsonwebtoken';
 
 import auth from '../../../../config/auth';
 import { UsersRepository } from '../../../../modules/accounts/infra/typeorm/repositories/UsersRepository';
+import { UsersTokensRepository } from '../../../../modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
 import { AppError } from '../../../errors/AppError';
 
 interface IPayload {
@@ -18,6 +19,7 @@ const ensureAuthenticated = async (
     // padrao jwt Bearer espaco token passado
 
     const authHeader = request.headers.authorization;
+    const usersTokensRepository = new UsersTokensRepository();
 
     if (!authHeader) {
         throw new AppError('token missing', 401);
@@ -39,10 +41,18 @@ const ensureAuthenticated = async (
     //
 
     try {
-        const { sub: user_id } = verify(token, auth.secret_token) as IPayload;
+        const { sub: user_id } = verify(
+            token,
+            auth.secret_refresh_token
+        ) as IPayload;
 
         const usersRepository = new UsersRepository();
-        const user = await usersRepository.findById(user_id);
+        // const user = await usersRepository.findById(user_id);
+
+        const user = await usersTokensRepository.findByUserIdAndToken(
+            user_id,
+            token
+        );
 
         if (!user) {
             throw new AppError('User does not exists!', 401);

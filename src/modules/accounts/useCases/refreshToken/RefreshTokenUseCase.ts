@@ -20,7 +20,7 @@ class RefreshTokenUseCase {
         @inject('DayjsDateProvider')
         private dateProvider: IDateProvider
     ) {}
-    async execute(token: string) {
+    async execute(token: string): Promise<string> {
         // verifica se o token e valido
         const { email, sub } = verify(
             token,
