@@ -24,6 +24,9 @@ class DayjsDateProvider implements IDateProvider {
         const compare = dayjs(endConvert).diff(startConvert, 'hours', true);
         return compare;
     }
+    addDays(days: number): Date {
+        return dayjs().add(days, 'days').toDate();
+    }
 }
 
 export { DayjsDateProvider };
