@@ -95,3 +95,16 @@
 **RN**
 
 -   o usuario deve estar logado na aplicacao [x]
+
+# Listagem de Alugueis para usuario
+
+**RF**
+
+-   Deve ser possivel o usuario recuperar a senha informado o email
+-   o usuario deve receber um e-mail com o passo a passo para a recuperacao da senha
+-   o usuario deve conseguir inserir uma nova senha
+
+**RN**
+
+-   o usuario precisa informa uma nova senha
+-   o link enviado para recuperacao deve expirar em 3 horas
