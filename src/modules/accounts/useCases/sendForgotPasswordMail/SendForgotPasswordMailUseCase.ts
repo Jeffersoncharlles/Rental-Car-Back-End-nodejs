@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import { inject, injectable } from 'tsyringe';
 import { v4 as uuidV4 } from 'uuid';
 
@@ -24,6 +25,16 @@ class SendForgotPasswordMailUseCase {
     async execute(email: string): Promise<void> {
         const timeExpire = 3;
 
+        // ler o path do templede
+        const templatePath = resolve(
+            __dirname,
+            '..',
+            '..',
+            'views',
+            'emails',
+            'forgotPassword.hbs'
+        );
+
         // verificando usuario
         const user = await this.usersRepository.findByEmail(email);
 
@@ -44,11 +55,17 @@ class SendForgotPasswordMailUseCase {
             expires_date: expiresDate,
         });
 
+        const variables = {
+            name: user.name,
+            link: `${process.env.FORGOT_EMAIL_URL}${token}`,
+        };
+
         // sendemail
         await this.mailProvider.sendMail(
             email,
             'Recuperacao de senha',
-            `O link para o reset e ${token}`
+            variables,
+            templatePath
         );
     }
 }
