@@ -4,6 +4,7 @@ interface IDateProvider {
     dateNow(): Date;
     compareInDays(start: Date, end: Date): number;
     addDays(days: number): Date;
+    addHours(hours: number): Date;
 }
 
 export { IDateProvider };
