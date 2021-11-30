@@ -38,6 +38,7 @@
     },
     "dependencies": {
         "@types/jsonwebtoken": "^8.5.5",
+        "@types/nodemailer": "^6.4.4",
         "bcryptjs": "^2.4.3",
         "csv-parse": "^4.16.3",
         "dayjs": "^1.10.4",
