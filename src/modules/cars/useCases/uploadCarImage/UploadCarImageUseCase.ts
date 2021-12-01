@@ -1,6 +1,6 @@
-import { IStorageProvider } from 'src/shared/container/providers/StorageProvider/IStorageProvider';
 import { inject, injectable } from 'tsyringe';
 
+import { IStorageProvider } from '../../../../shared/container/providers/StorageProvider/IStorageProvider';
 import { ICarsImagesRepository } from '../../repository/ICarsImagesRepository';
 
 interface IRequest {
