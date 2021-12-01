@@ -16,7 +16,7 @@ const getAvailableCarsController = new GetAvailableCarsController();
 const createCarSpecificationController = new CreateCarSpecificationController();
 const uploadCarImageController = new UploadCarImageController();
 
-const upload = multer(uploadConfig.upload('./tmp/cars'));
+const upload = multer(uploadConfig);
 
 /*= ================================================================================== */
 /*= ================================================================================== */
