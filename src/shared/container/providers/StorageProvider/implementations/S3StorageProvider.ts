@@ -8,6 +8,7 @@ import { IStorageProvider } from '../IStorageProvider';
 
 class S3StorageProvider implements IStorageProvider {
     private client: S3;
+
     constructor() {
         this.client = new S3({
             region: process.env.AWS_BUCKET_REGION,
