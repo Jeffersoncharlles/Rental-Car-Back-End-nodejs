@@ -2,7 +2,7 @@
  * @Author: Jefferson Charlles
  * @Date:   2021-11-30 12:51:00
  * @Last Modified by:   Jefferson Charlles
- * @Last Modified time: 2021-12-02 01:29:53
+ * @Last Modified time: 2021-12-02 03:32:46
  */
 import { resolve } from 'path';
 import { inject, injectable } from 'tsyringe';

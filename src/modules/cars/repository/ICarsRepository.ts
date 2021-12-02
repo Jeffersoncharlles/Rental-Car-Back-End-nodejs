@@ -1,3 +1,9 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-11-17 19:40:09
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 18:09:14
+ */
 import { ICreateCarDTO } from '../dto/ICreateCarDTO';
 import { Car } from '../infra/typeorm/Car';
 
