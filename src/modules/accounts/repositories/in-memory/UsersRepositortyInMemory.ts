@@ -1,3 +1,9 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-10-27 13:28:43
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 01:28:22
+ */
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { User } from '../../infra/typeorm/User';
 import { IUsersRepository } from '../IUsersRepository';

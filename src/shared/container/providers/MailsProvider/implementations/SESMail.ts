@@ -1,3 +1,9 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-12-01 21:09:52
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 01:22:40
+ */
 import { SES } from 'aws-sdk';
 import fs from 'fs';
 import handlebars from 'handlebars';

@@ -1,7 +1,13 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-10-07 04:31:24
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 01:01:44
+ */
 import { container } from 'tsyringe';
 
+import './providers/MailsProvider';
 import './providers/DateProvider';
-import './providers/MailProvider';
 import './providers/StorageProvider';
 
 import { UsersRepository } from '../../modules/accounts/infra/typeorm/repositories/UsersRepository';

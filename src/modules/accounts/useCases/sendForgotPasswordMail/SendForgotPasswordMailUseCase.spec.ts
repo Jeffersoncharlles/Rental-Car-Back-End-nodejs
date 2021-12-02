@@ -1,5 +1,11 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-11-30 19:27:14
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 01:21:44
+ */
 import { DayjsDateProvider } from '../../../../shared/container/providers/DateProvider/implementations/DayjsDateProvider';
-import { MailProviderInMemory } from '../../../../shared/container/providers/MailProvider/in-memory/MailProviderInMemory';
+import { MailProviderInMemory } from '../../../../shared/container/providers/MailsProvider/in-memory/MailProviderInMemory';
 import { AppError } from '../../../../shared/errors/AppError';
 import { UsersRepositortyInMemory } from '../../repositories/in-memory/UsersRepositortyInMemory';
 import { UsersTokensRepositoryInMemory } from '../../repositories/in-memory/UsersTokensRepositoryInMemory';

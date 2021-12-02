@@ -1,3 +1,9 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-11-30 18:29:03
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 01:28:31
+ */
 import { ICreateUserTokenDTO } from '../../dtos/ICreateUserTokenDTO';
 import { UserTokens } from '../../infra/typeorm/UserTokens';
 import { IUsersTokensRepository } from '../IUsersTokensRepository';
