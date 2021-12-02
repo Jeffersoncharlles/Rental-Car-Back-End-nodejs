@@ -2,7 +2,7 @@
 # @Author: Jefferson Charlles
 # @Date:   2021-12-01 22:43:40
 # @Last Modified by:   Jefferson Charlles
-# @Last Modified time: 2021-12-02 19:30:54
+# @Last Modified time: 2021-12-02 19:54:33
 # ubuntu 20.04 lts
 
 sudo adduser app --disabled-password --y
@@ -63,3 +63,6 @@ echo \
 
 
 ##cat ~/.ssh/id_rsa.pub
+
+sudo groupadd docker
+ sudo usermod -aG docker $USER
