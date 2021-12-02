@@ -2,7 +2,7 @@
  * @Author: Jefferson Charlles
  * @Date:   2021-12-02 18:19:04
  * @Last Modified by:   Jefferson Charlles
- * @Last Modified time: 2021-12-02 18:50:10
+ * @Last Modified time: 2021-12-02 19:36:50
  */
 module.exports = {
     presets: [
@@ -14,11 +14,11 @@ module.exports = {
             'module-resolver',
             {
                 alias: {
-                    '@modules': ['./src/modules'],
-                    '@config': ['./src/config'],
-                    '@shared': ['./src/shared'],
-                    '@errors': ['./src/errors'],
-                    '@utils': ['./src/utils'],
+                    '@modules': './src/modules',
+                    '@config': './src/config',
+                    '@shared': './src/shared',
+                    '@errors': './src/errors',
+                    '@utils': './src/utils',
                 },
             },
         ],
