@@ -2,14 +2,14 @@
  * @Author: Jefferson Charlles
  * @Date:   2021-12-02 18:19:04
  * @Last Modified by:   Jefferson Charlles
- * @Last Modified time: 2021-12-02 18:49:13
+ * @Last Modified time: 2021-12-02 18:50:10
  */
 module.exports = {
     presets: [
         ['@babel/preset-env', { targets: { node: 'current' } }],
         '@babel/preset-typescript',
     ],
-    plugin: [
+    plugins: [
         [
             'module-resolver',
             {
