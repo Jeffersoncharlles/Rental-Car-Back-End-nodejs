@@ -1,5 +1,13 @@
 # node.js
-#
-node_modules/
 
-.ENV
+node_modules
+.vscode
+tmp/*
+coverage
+.env
+dist
+ormconfig.json
+
+
+#gitkeep sobe a pasta mais nao os arquivos
+!tmp/.gitkeep
