@@ -2,7 +2,7 @@
  * @Author: Jefferson Charlles
  * @Date:   2021-10-07 04:31:24
  * @Last Modified by:   Jefferson Charlles
- * @Last Modified time: 2021-12-02 23:55:14
+ * @Last Modified time: 2021-12-03 00:58:26
  */
 import 'reflect-metadata';
 
@@ -16,11 +16,14 @@ import upload from '../../../config/upload';
 import swaggerFile from '../../../swagger.json';
 import { AppError } from '../../errors/AppError';
 import createConnection from '../typeorm';
+import rateLimiter from './middlewares/rateLimiter';
 import { router } from './routes';
 
 // chamando o create connection alterado
 createConnection();
 const app = express();
+
+// app.use(rateLimiter);
 
 app.use(express.json());
 

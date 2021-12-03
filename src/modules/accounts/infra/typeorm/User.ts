@@ -2,10 +2,10 @@
  * @Author: Jefferson Charlles
  * @Date:   2021-10-07 04:31:24
  * @Last Modified by:   Jefferson Charlles
- * @Last Modified time: 2021-12-02 23:56:24
+ * @Last Modified time: 2021-12-03 01:03:18
  */
 
-import { Expose, plainToClass } from 'class-transformer';
+import { Expose } from 'class-transformer';
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
