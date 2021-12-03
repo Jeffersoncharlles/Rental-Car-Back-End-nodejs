@@ -1,4 +1,11 @@
+/**
+ * @Author: Jefferson Charlles
+ * @Date:   2021-10-07 04:31:24
+ * @Last Modified by:   Jefferson Charlles
+ * @Last Modified time: 2021-12-02 23:55:14
+ */
 import 'reflect-metadata';
+
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';

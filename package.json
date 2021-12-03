@@ -9,7 +9,7 @@
         "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
         "test": "set NODE_ENV=test&&jest --runInBand --detectOpenHandles",
         "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts",
-        "build": "babel src --extensions \" .js,.ts\" --out-dir dis --copy-files"
+        "build": "babel src --extensions \" .js,.ts\" --out-dir dist --copy-files"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.16.0",

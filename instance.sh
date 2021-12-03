@@ -2,7 +2,7 @@
 # @Author: Jefferson Charlles
 # @Date:   2021-12-01 22:43:40
 # @Last Modified by:   Jefferson Charlles
-# @Last Modified time: 2021-12-02 19:54:33
+# @Last Modified time: 2021-12-02 23:35:52
 # ubuntu 20.04 lts
 
 sudo adduser app --disabled-password --y
@@ -66,3 +66,9 @@ echo \
 
 sudo groupadd docker
  sudo usermod -aG docker $USER
+
+
+sudo apt-get install nginx -y
+
+sudo npm install pm2@latest -g
+sudo yarn global add pm2
