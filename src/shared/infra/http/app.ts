@@ -4,9 +4,9 @@
  * @Last Modified by:   Jefferson Charlles
  * @Last Modified time: 2021-12-03 00:58:26
  */
+import 'dotenv/config';
 import 'reflect-metadata';
 
-import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';

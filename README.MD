@@ -1,110 +1,138 @@
-## RentalX-Backend
+<h1 align='center'>
+  <img src='.github/rentx_logo.png'>
+</h1>
 
-**RF** => Requisitos funcionais
+<div align="center">
+  <a href="https://opensource.org/licenses/MIT"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
+</div>
 
-**RNF** => Requisitos não funcionais
+<p align="center">
+  <a href="#interrobang-what-is-rentx">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-technologies">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#construction_worker-how-to-use-developing">How to use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-documentation">Docs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#confetti_ball-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#key-license">License</a>
+</p>
 
-**RN** => Regras de negócio
+---
 
-# Cadastro de carro
+## :interrobang: What is RentX?
 
-**RF**
+RentX is a high-quality and well-rated car rental service. <br>
+Analyze vehicle specifications, choose the one that best suits you. Save and travel safely! <br>
 
--   Deve ser possível cadastrar um novo carro [x]
+This API was developed in the NodeJS - Ignite Bootcamp, from Rocketseat. 🔥🚀
 
-**RN**
+## :rocket: Technologies:
 
--   Não deve ser possivel cadastrar um carro com uma placa já existente [x]
--   O carro deve ser cadastrado com disponibilidade por padrão [x]
--   O usuario responsavel pelo cadastro do carro deve ser adm. [x]
+This back-end project was developed using the following technologies:
 
-# Listagem de carros
+-   [Typescript][typescript]
+-   [Node.js][nodejs]
+-   [Docker][docker]
+-   [PostgreSQL][postgresql]
+-   [JEST][jest]
+-   [Swagger UI][swagger]
 
-**RF**
+## :construction_worker: How to use: (developing)
 
--   Deve ser possivel listar todos carros disponíveis [x]
--   Deve ser possivel listar todos carros disponíveis pelo nome da categoria [x]
--   Deve ser possivel listar todos carros disponíveis pelo nome da marca [x]
--   Deve ser possivel listar todos carros disponíveis pelo nome da carro [x]
+To clone and run this API you will need the following software installed on your computer:
 
-**RN**
+-   [Git][git]
+-   [Node][nodejs]
+-   [Yarn][yarn]
+-   [Docker][docker]
 
--   O usuario não precisa estar logado no sistema.[x]
+### :electric_plug: Install dependencies and run the application:
 
-# Cadastro de Especificação no carro
+```bash
+# Clone this repository:
+$ git clone https://github.com/i-ramoss/rentx.git
 
-**RF**
+# Enter the repository:
+$ cd RentX
 
--   Deve ser possivel cadastrar uma especificação para um carro [x]
+# Install the dependencies:
+$ yarn
 
-**RN**
+# Create the app containers:
+$ docker-compose up -d
 
--   Não deve ser possivel cadastrar uma especificação para um carro não cadastrado [x]
--   Não deve ser possivel cadastrar uma especificação já existente para o mesmo carro
--   O usuario responsavel pelo cadastro deve ser adm.[x]
+# Make a copy of the file "ormconfig.example.json" with the name "ormconfig.json":
+# Fill in the correct data to be able to connect to the database
+$ cp ormconfig.example.json ormconfig.json
 
-# Cadastro de imagens do carro
+# Make a copy of the ".env.example" file with the name ".env":
+# Some environment variables are essential for the API to work in production
+$ cp .env.example .env
 
-**RF**
+# Run the migrations:
+$ yarn typeorm migrations:run
 
--   Deve ser possivel cadastrar a imagem do carro [x]
+# Start the application
+$ yarn dev
 
-**RNF**
+# The server is running at port 3333 (http://localhost:3333/)
 
--   Utilizar o multer para upload dos arquivos [x]
+# To stop the database:
+$ docker-compose stop
+```
 
-**RN**
+### 🧪 Run the tests:
 
--   O usuario deve poder cadastrar mais de uma imagem para o mesmo carro [x]
--   O usuario responsavel pelo cadastro deve ser adm. [x]
+```bash
+# To run all tests and generate coverage reports:
+$ yarn test
 
-# Aluguel de carro
+# To observe the functionality tests that are being changed:
+$ yarn test:watch
 
-**RF**
+# The coverage reports can be seen by going to /coverage/lcov-report/index.html and opening this html file in your browser.
+```
 
--   Deve ser possivel cadastrar um aluguel [x]
+## :books: Documentation:
 
-**RN**
+All API endpoints have been documented using Swagger. To view just access the URL below or click on this [link](https://rentxapi.jefferdeveloper.com/api-docs/). <br>
+_Remember to start the server first_
 
--   O aluguel deve ter duracao minima de 24 Horas. [x]
--   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo usuario [x]
--   Nao deve ser possivel cadastrar um novo aluguel caso ja existe um aberto para o mesmo carro [x]
--   ao realizar um aluguel status carro deve ser alterado para indisponivel [x]
+Local: _http://localhost:3333/api-docs_ <br>
+Production *https://deploy.ianramos.dev/api-docs/*
 
-# Devolucao de carro
+## 📌 Project requeriments:
 
-**RF**
+All rules for this API can be found on this [link](./docs/requeriments_en.md).
 
--   Deve ser possivel realizar a devolucao de um carro [x]
+## :confetti_ball: How to contribute:
 
-**RN**
+-   Make a fork;
+-   Create a branch with your functionality: `git checkout -b <your_feature_name>`;
+-   Submit the changes made: `git commit -am 'type(scope): <description>'`;
+-   Push your branch: `git push origin <your_branch_name>`.
 
--   se o carro for devolvido com menos de 24 horas, devera ser cobrado diaria completa [x]
--   ao realizar a devolucao , o carro devera ser liberado para outro aluguel [x]
--   ao realizar a devolucao , o usuario devera ser liberado para outro aluguel [x]
--   ao realizar a devolucao , devera ser calculado o total do aluguel [x]
--   caso o horario de devolucao seja superior ao horario previsto dever ser cobrado multa por dia [x]
--   caso haja multa, devera ser somado ao total do aluguel [x]
+After your request is accepted and added to the project, you can delete your branch.
 
-# Listagem de Alugueis para usuario
+## :key: License:
 
-**RF**
+This project in under MIT license, for more details check in [LICENSE][license]. <br>
+Feel free to bring new features or fix problems, it will be a pleasure! 💜
 
--   deve ser possivel realizar a busca de todos os alugueis para o usuario [x]
+---
 
-**RN**
+<div align='center'>
+  Made with 💚  by <strong>Jefferson Charlles</strong> 🔥
+  <a href='https://www.linkedin.com/in/jeffersoncharlles/'>Get in touch!</a>
+</div>
 
--   o usuario deve estar logado na aplicacao [x]
-
-# Listagem de Alugueis para usuario
-
-**RF**
-
--   Deve ser possivel o usuario recuperar a senha informado o email
--   o usuario deve receber um e-mail com o passo a passo para a recuperacao da senha
--   o usuario deve conseguir inserir uma nova senha
-
-**RN**
-
--   o usuario precisa informa uma nova senha
--   o link enviado para recuperacao deve expirar em 3 horas
+[typescript]: https://www.typescriptlang.org/
+[nodejs]: https://nodejs.org/en/
+[express]: https://expressjs.com/pt-br/
+[postgresql]: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+[multer]: https://github.com/expressjs/multer
+[swagger]: https://swagger.io/
+[git]: https://git-scm.com
+[docker]: https://www.docker.com/
+[jest]: https://jestjs.io/
+[yarn]: https://yarnpkg.com/
+[license]: https://github.com/jeffersoncharlles/Foodfy/blob/master/LICENSE
+[linkedin]: https://www.linkedin.com/in/jeffersoncharlles/

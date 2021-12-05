@@ -6,9 +6,7 @@
  */
 import { NextFunction, Request, Response } from 'express';
 import { RateLimiterRedis } from 'rate-limiter-flexible';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-import { redis } from 'redis';
+import redis from 'redis';
 
 import { AppError } from '../../../errors/AppError';
 
