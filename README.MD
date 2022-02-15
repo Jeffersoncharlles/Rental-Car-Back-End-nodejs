@@ -1,5 +1,5 @@
 <h1 align='center'>
-  <img src='.github/rentx_logo.png'>
+  <img src=''>
 </h1>
 
 <div align="center">
@@ -48,7 +48,7 @@ To clone and run this API you will need the following software installed on your
 
 ```bash
 # Clone this repository:
-$ git clone https://github.com/i-ramoss/rentx.git
+$ git clone https://github.com/Jeffersoncharlles/rentalbackendx.git
 
 # Enter the repository:
 $ cd RentX
@@ -97,7 +97,7 @@ All API endpoints have been documented using Swagger. To view just access the UR
 _Remember to start the server first_
 
 Local: _http://localhost:3333/api-docs_ <br>
-Production *https://deploy.ianramos.dev/api-docs/*
+
 
 ## 📌 Project requeriments:
 
